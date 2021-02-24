@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title>Cryptocurrency</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="images/bitcoin.png" />
+
+    <!-- css special alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+
+    <!-- css  -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="loading-spinner-page"></div>
+    <header>
+      <h1>Cryptocurrency</h1>
+    </header>
+    <main>
+      <div id="content">
+        <div id="menu">
+          <div id="buttonsMenu">
+            <button id="btnHome">Home</button>
+            <button id="btnLiveReports">Live Reports</button>
+            <button id="btnAbout">About</button>
+          </div>
+          <div id="formSearch">
+            <button id="btnShowSelectedCoins">Selected coins</button>
+            <input id="searchInput" type="text" placeholder="Search" />
+            <button id="btnSearch">
+              Search
+            </button>
+          </div>
+        </div>
+        <!--  -->
+
+        <div id="mainContent" class="allCoinsInfo"></div>
+      </div>
+    </main>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div id="modalContent" class="modal-content">
+        <p>
+          You can choose a maximum of <span>5</span> coins. Please remove one or
+          more coins
+        </p>
+        <div id="activeModalCoins"></div>
+        <div id="modalButtons">
+          <button id="btnSaveActiveCoins" disabled>Save</button>
+          <button id="btnCloseModal">Close</button>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <script src="main.js"></script>
+    <script src="graph.js"></script>
+  </body>
+</html>

@@ -1,0 +1,380 @@
+body {
+  background-image: url(images/backgroundMain.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Header */
+h1 {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: 66px;
+  color: orangered;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bold;
+  -webkit-text-stroke: 1px rgb(255, 255, 255);
+}
+
+/* Main */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#content {
+  width: 70%;
+}
+
+/* Menu */
+#buttonsMenu,
+#formSearch {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+#buttonsMenu button {
+  height: 30px;
+  font-size: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 5px;
+}
+
+#formSearch button {
+  border-radius: 5px;
+  display: inline-block;
+  height: 23px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 15px;
+}
+
+#buttonsMenu button,
+#formSearch button {
+  background-color: orangered;
+  border: 1px solid rgb(252, 154, 137);
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+#formSearch input {
+  border: 1px solid rgb(252, 154, 137);
+  border-radius: 5px;
+}
+
+/* All coins info div */
+.allCoinsInfo {
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.747);
+  border: 1px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  grid-gap: 10px;
+  margin-top: 20px;
+}
+
+.allCoinsInfo:empty {
+  border: none;
+}
+
+.liveReportsPage {
+  color: white;
+  font-size: 30;
+}
+/* Css classes for JS */
+.coinMain {
+  width: 200px;
+  position: relative;
+  margin: 10px;
+  color: whitesmoke;
+  display: inline-flex;
+  justify-content: space-between;
+  background-color: black;
+  padding: 10px;
+  flex-wrap: wrap;
+  border-radius: 5px;
+}
+.coinSymbol,
+.coinSwitch {
+  width: 30%;
+}
+
+.coinName {
+  overflow: auto;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.moreInfo {
+  height: 25px;
+  background-color: orangered;
+  color: white;
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid rgb(252, 154, 137);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+.moreInfoDiv,
+.moreInfoCoinPrice {
+  margin-top: 10px;
+}
+
+/* Switch button */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 49px;
+  height: 23px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: grey;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 19px;
+  width: 19px;
+  left: 2px;
+  bottom: 2px;
+  background-color: whitesmoke;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: orangered;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px whitesmoke;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* progress bar */
+
+.loading-spinner-page,
+.loading-spinner-coin {
+  display: inline-block;
+  border-style: solid;
+  border-color: orangered;
+  border-radius: 50%;
+  border-width: 10px;
+
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  animation: 1s spin infinite;
+  animation-timing-function: linear;
+}
+.loading-spinner-page {
+  position: fixed;
+  left: 47%;
+  top: 47%;
+  width: 50px;
+  height: 50px;
+}
+.loading-spinner-coin {
+  position: absolute;
+  left: 40%;
+  top: 30;
+  width: 30px;
+  height: 30px;
+  border-width: 5px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Modal  */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /*Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  border-radius: 10px;
+  background-color: whitesmoke;
+  margin: 10% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%; /* Could be more or less, depending on screen size */
+}
+
+.modal-content p {
+  font-size: 23px;
+  margin-top: 0px;
+  color: black;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.modal-content p span {
+  margin-top: 0px;
+  color: orangered;
+}
+
+#modalButtons {
+  display: flex;
+  justify-content: end;
+  width: 20%;
+  margin-left: 75%;
+  margin-top: 10px;
+}
+
+/* The Close Button */
+#btnCloseModal,
+#btnSaveActiveCoins {
+  margin-left: 15px;
+  font-size: 23px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 1px solid grey;
+}
+
+#btnCloseModal {
+  background-color: orange;
+  color: whitesmoke;
+}
+
+#btnSaveActiveCoins {
+  color: whitesmoke;
+  background-color: green;
+}
+
+#btnSaveActiveCoins:hover,
+#btnSaveActiveCoins:focus {
+  border: black 1px solid;
+  color: whitesmoke;
+  background-color: rgb(63, 248, 88);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#btnSaveActiveCoins:disabled {
+  border: 1px solid grey;
+  background-color: grey;
+  cursor: auto;
+}
+#btnCloseModal:hover,
+#btnCloseModal:focus {
+  border: black 1px solid;
+  color: whitesmoke;
+  background-color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#activeModalCoins {
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.747);
+  border: 1px solid white;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  align-items: start;
+  width: 100%;
+  grid-gap: 10px;
+  margin-top: 20px;
+}
+
+.aboutPage {
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: whitesmoke;
+  background-color: rgba(255, 255, 255, 0.747);
+  color: orangered;
+  font-size: 27px;
+  text-align: center;
+}
+
+/* Graph */
+#chartContainer {
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 1200) {
+  #modalButtons {
+    margin-left: 35%;
+  }
+}
+@media only screen and (max-width: 900px) {
+  h1 {
+    font-size: 55px;
+  }
+  #modalButtons {
+    margin-left: 25%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 45px;
+  }
+  #modalButtons {
+    margin-left: 20%;
+  }
+}
+
+@media only screen and (max-width: 450) {
+  h1 {
+    font-size: 30px;
+  }
+  #modalButtons {
+    margin-left: 15%;
+  }
+  #btnCloseModal,
+  #btnSaveActiveCoins {
+    margin-left: 10px;
+    font-size: 23px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid grey;
+  }
+}
+
+input,
+button {
+  outline: none;
+}
